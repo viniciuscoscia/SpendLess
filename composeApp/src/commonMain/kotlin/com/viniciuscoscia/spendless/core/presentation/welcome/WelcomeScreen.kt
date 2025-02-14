@@ -2,6 +2,7 @@ package com.viniciuscoscia.spendless.core.presentation.welcome
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -26,6 +27,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.focus.onFocusChanged
+import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -34,6 +39,7 @@ import androidx.compose.ui.unit.sp
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import spendless.composeapp.generated.resources.Res
+import spendless.composeapp.generated.resources.already_have_an_account
 import spendless.composeapp.generated.resources.next
 import spendless.composeapp.generated.resources.purple_wallet_icon
 import spendless.composeapp.generated.resources.username
@@ -78,7 +84,6 @@ private fun WalletIcon() {
     )
 }
 
-
 @Composable
 private fun TitleText() {
     Text(
@@ -104,40 +109,50 @@ private fun SubtitleText() {
 @Composable
 private fun UserNameTextField() {
     var basicText by remember { mutableStateOf("") }
+    val fontSize = 32.sp
+    val focusRequester = remember { FocusRequester() }
+    var isFocused by remember { mutableStateOf(false) }
 
     BasicTextField(
         value = basicText,
         onValueChange = {
             basicText = it
         },
+        cursorBrush = SolidColor(MaterialTheme.colorScheme.primary),
         modifier = Modifier
             .fillMaxWidth()
             .padding(top = 32.dp)
             .height(62.dp)
             .clip(RoundedCornerShape(12.dp))
-            .background(MaterialTheme.colorScheme.onBackground.copy(0.08f)),
+            .background(MaterialTheme.colorScheme.onBackground.copy(0.08f))
+            .focusRequester(focusRequester)
+            .onFocusChanged {
+                isFocused = it.isFocused
+            },
         textStyle = TextStyle(
+            fontWeight = FontWeight.SemiBold,
+            textAlign = TextAlign.Center,
             color = MaterialTheme.colorScheme.onSurface,
-            fontSize = 16.sp
+            fontSize = fontSize
         ),
         decorationBox = { innerTextField ->
             Box(
                 modifier = Modifier
-                    .fillMaxSize(),
+                    .fillMaxSize()
+                    .clickable { focusRequester.requestFocus() },
                 contentAlignment = Alignment.Center
             ) {
-                if (basicText.isEmpty()) {
+                if (basicText.isEmpty() && !isFocused) {
                     Text(
                         style = MaterialTheme.typography.displayMedium,
                         fontWeight = FontWeight.SemiBold,
                         textAlign = TextAlign.Center,
                         text = stringResource(Res.string.username),
                         color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.38f),
-                        fontSize = 36.sp
+                        fontSize = fontSize
                     )
-                } else {
-                    innerTextField()
                 }
+                innerTextField()
             }
         }
     )
@@ -188,7 +203,7 @@ private fun AlreadyHaveAccountButton() {
                 textAlign = TextAlign.Center,
                 fontSize = 16.sp,
                 color = MaterialTheme.colorScheme.primary,
-                text = "Already have an account?"
+                text = stringResource(Res.string.already_have_an_account)
             )
         }
     )
