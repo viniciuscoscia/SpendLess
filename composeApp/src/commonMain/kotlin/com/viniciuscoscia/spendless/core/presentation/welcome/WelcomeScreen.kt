@@ -36,6 +36,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.viniciuscoscia.spendless.core.presentation.common.components.SubtitleText
+import com.viniciuscoscia.spendless.core.presentation.common.components.TitleText
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import spendless.composeapp.generated.resources.Res
@@ -60,9 +62,13 @@ fun WelcomeScreen() {
         ) {
             WalletIcon()
 
-            TitleText()
+            TitleText(
+                text = stringResource(Res.string.welcome_screen_title)
+            )
 
-            SubtitleText()
+            SubtitleText(
+                text = stringResource(Res.string.welcome_screen_subtitle)
+            )
 
             UserNameTextField()
 
@@ -81,28 +87,6 @@ private fun WalletIcon() {
         ),
         painter = painterResource(Res.drawable.purple_wallet_icon),
         contentDescription = ""
-    )
-}
-
-@Composable
-private fun TitleText() {
-    Text(
-        modifier = Modifier.padding(vertical = 8.dp),
-        fontSize = 28.sp,
-        style = MaterialTheme.typography.headlineMedium,
-        fontWeight = FontWeight.SemiBold,
-        textAlign = TextAlign.Center,
-        color = MaterialTheme.colorScheme.onSurface,
-        text = stringResource(Res.string.welcome_screen_title)
-    )
-}
-
-@Composable
-private fun SubtitleText() {
-    Text(
-        text = stringResource(Res.string.welcome_screen_subtitle),
-        style = MaterialTheme.typography.bodyMedium,
-        fontSize = 14.sp,
     )
 }
 

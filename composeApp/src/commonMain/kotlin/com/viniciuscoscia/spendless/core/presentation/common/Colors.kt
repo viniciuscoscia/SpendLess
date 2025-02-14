@@ -1,4 +1,4 @@
-package com.viniciuscoscia.spendless.core.presentation
+package com.viniciuscoscia.spendless.core.presentation.common
 
 import androidx.compose.material3.ColorScheme
 import androidx.compose.ui.graphics.Color
