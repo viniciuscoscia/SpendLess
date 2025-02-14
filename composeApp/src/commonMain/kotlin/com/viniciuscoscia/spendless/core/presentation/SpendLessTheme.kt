@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 fun SpendLessTheme(content: @Composable () -> Unit) {
     MaterialTheme(
         typography = FigtreeTypography(),
-        content = content
+        content = content,
+        colorScheme = lightColorScheme
     )
 }
