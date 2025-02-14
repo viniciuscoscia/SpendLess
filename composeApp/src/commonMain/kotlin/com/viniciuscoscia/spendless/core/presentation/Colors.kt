@@ -71,37 +71,6 @@ val OutlineVariant = Color(0xFFC5C6D0)
 // Scrim Color
 val Scrim = Color(0xFF000000)
 
-// State Layer Opacities
-object StateOpacity {
-    // Primary state layers
-    val Primary08 = Primary.copy(alpha = 0.08f)
-    val Primary12 = Primary.copy(alpha = 0.12f)
-    val Primary16 = Primary.copy(alpha = 0.16f)
-
-    // Primary Container state layers
-    val PrimaryContainer08 = PrimaryContainer.copy(alpha = 0.08f)
-    val PrimaryContainer12 = PrimaryContainer.copy(alpha = 0.12f)
-
-    // On Primary Container state layers
-    val OnPrimaryContainer12 = OnPrimaryContainer.copy(alpha = 0.12f)
-
-    // Secondary Container state layers
-    val OnSecondaryContainer08 = OnSecondaryContainer.copy(alpha = 0.08f)
-    val OnSecondaryContainer12 = OnSecondaryContainer.copy(alpha = 0.12f)
-
-    // Error state layers
-    val Error08 = Error.copy(alpha = 0.08f)
-    val Error12 = Error.copy(alpha = 0.12f)
-
-    // Background state layers
-    val OnBackground08 = OnBackground.copy(alpha = 0.08f)
-    val OnBackground12 = OnBackground.copy(alpha = 0.12f)
-
-    // Surface state layers
-    val OnSurface12 = OnSurface.copy(alpha = 0.12f)
-    val OnSurfaceVariant12 = OnSurfaceVariant.copy(alpha = 0.12f)
-}
-
 val lightColorScheme: ColorScheme = ColorScheme(
     // Primary colors
     primary = Primary,

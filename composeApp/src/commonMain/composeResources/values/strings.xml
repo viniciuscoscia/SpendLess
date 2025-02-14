@@ -2,4 +2,6 @@
 <resources>
     <string name="welcome_screen_title">Welcome to SpendLess!\nHow can we address you?</string>
     <string name="welcome_screen_subtitle">Create unique username</string>
+    <string name="username">username</string>
+    <string name="next">Next</string>
 </resources>
