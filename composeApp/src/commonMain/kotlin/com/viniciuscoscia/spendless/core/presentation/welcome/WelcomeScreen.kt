@@ -1,6 +1,5 @@
 package com.viniciuscoscia.spendless.core.presentation.welcome
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -38,12 +37,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.viniciuscoscia.spendless.core.presentation.common.components.SubtitleText
 import com.viniciuscoscia.spendless.core.presentation.common.components.TitleText
-import org.jetbrains.compose.resources.painterResource
+import com.viniciuscoscia.spendless.core.presentation.common.components.WalletIcon
 import org.jetbrains.compose.resources.stringResource
 import spendless.composeapp.generated.resources.Res
 import spendless.composeapp.generated.resources.already_have_an_account
 import spendless.composeapp.generated.resources.next
-import spendless.composeapp.generated.resources.purple_wallet_icon
 import spendless.composeapp.generated.resources.username
 import spendless.composeapp.generated.resources.welcome_screen_subtitle
 import spendless.composeapp.generated.resources.welcome_screen_title
@@ -79,16 +77,6 @@ fun WelcomeScreen() {
     }
 }
 
-@Composable
-private fun WalletIcon() {
-    Image(
-        modifier = Modifier.padding(
-            vertical = 24.dp
-        ),
-        painter = painterResource(Res.drawable.purple_wallet_icon),
-        contentDescription = ""
-    )
-}
 
 @Composable
 private fun UserNameTextField() {

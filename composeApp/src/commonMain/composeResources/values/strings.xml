@@ -2,6 +2,8 @@
 <resources>
     <string name="welcome_screen_title">Welcome to SpendLess!\nHow can we address you?</string>
     <string name="welcome_screen_subtitle">Create unique username</string>
+    <string name="create_pin_screen_title">Create PIN</string>
+    <string name="create_pin_screen_subtitle">Use PIN to login to your account</string>
     <string name="username">username</string>
     <string name="next">Next</string>
     <string name="already_have_an_account">Already have an account?</string>

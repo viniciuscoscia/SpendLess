@@ -10,7 +10,7 @@ val PrimaryContainer = Color(0xFF813BFF)
 val OnPrimaryContainer = Color(0xFFFFFFFF)
 
 // Primary Fixed Colors
-val PrimaryFixed = Color(0xFFEAD0FF)
+val PrimaryFixed = Color(0xFFEADDFF)
 val OnPrimaryFixed = Color(0xFF24005A)
 val OnPrimaryFixedVariant = Color(0xFF5900C7)
 val InversePrimary = Color(0xFFD2BCFF)
