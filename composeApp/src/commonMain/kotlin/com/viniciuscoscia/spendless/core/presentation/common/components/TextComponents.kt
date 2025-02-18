@@ -11,21 +11,31 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun TitleText(text: String) {
+fun TitleText(
+    text: String,
+    textAlign: TextAlign = TextAlign.Center,
+    modifier: Modifier = Modifier
+) {
     Text(
-        modifier = Modifier.padding(vertical = 8.dp),
+        modifier = modifier.padding(vertical = 8.dp),
         fontSize = 28.sp,
         style = MaterialTheme.typography.headlineMedium,
         fontWeight = FontWeight.SemiBold,
-        textAlign = TextAlign.Center,
+        textAlign = textAlign,
         color = MaterialTheme.colorScheme.onSurface,
         text = text
     )
 }
 
 @Composable
-fun SubtitleText(text: String) {
+fun SubtitleText(
+    text: String,
+    textAlign: TextAlign = TextAlign.Center,
+    modifier: Modifier = Modifier,
+) {
     Text(
+        modifier = modifier,
+        textAlign = textAlign,
         text = text,
         style = MaterialTheme.typography.bodyMedium,
         fontSize = 14.sp,

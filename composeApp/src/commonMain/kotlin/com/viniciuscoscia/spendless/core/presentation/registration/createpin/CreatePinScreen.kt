@@ -1,4 +1,4 @@
-package com.viniciuscoscia.spendless.core.presentation.createpin
+package com.viniciuscoscia.spendless.core.presentation.registration.createpin
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -83,6 +83,7 @@ fun CreatePinScreen() {
             WalletIcon()
 
             TitleText(
+                modifier = Modifier.padding(vertical = 8.dp),
                 text = stringResource(Res.string.create_pin_screen_title)
             )
 

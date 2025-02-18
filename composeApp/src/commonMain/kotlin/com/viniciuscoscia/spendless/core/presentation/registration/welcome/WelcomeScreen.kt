@@ -1,4 +1,4 @@
-package com.viniciuscoscia.spendless.core.presentation.welcome
+package com.viniciuscoscia.spendless.core.presentation.registration.welcome
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -61,6 +61,7 @@ fun WelcomeScreen() {
             WalletIcon()
 
             TitleText(
+                modifier = Modifier.padding(vertical = 8.dp),
                 text = stringResource(Res.string.welcome_screen_title)
             )
 
