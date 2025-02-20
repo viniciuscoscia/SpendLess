@@ -14,4 +14,5 @@
     <string name="thousands_separator">Thousands separator</string>
     <string name="next">Next</string>
     <string name="already_have_an_account">Already have an account?</string>
+    <string name="spent_this_month">spent this month</string>
 </resources>

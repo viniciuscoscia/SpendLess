@@ -38,6 +38,6 @@ fun SubtitleText(
         textAlign = textAlign,
         text = text,
         style = MaterialTheme.typography.bodyMedium,
-        fontSize = 14.sp,
+        fontSize = 16.sp,
     )
 }
