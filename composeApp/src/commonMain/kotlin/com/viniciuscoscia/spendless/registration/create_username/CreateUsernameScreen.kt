@@ -1,7 +1,6 @@
-package com.viniciuscoscia.spendless.core.presentation.registration.welcome
+package com.viniciuscoscia.spendless.registration.create_username
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -26,8 +25,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.focus.FocusRequester
-import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.text.TextStyle
@@ -47,7 +44,7 @@ import spendless.composeapp.generated.resources.welcome_screen_subtitle
 import spendless.composeapp.generated.resources.welcome_screen_title
 
 @Composable
-fun WelcomeScreen() {
+fun CreateUsernameScreen() {
     Scaffold(
         modifier = Modifier.fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
@@ -83,7 +80,6 @@ fun WelcomeScreen() {
 private fun UserNameTextField() {
     var basicText by remember { mutableStateOf("") }
     val fontSize = 32.sp
-    val focusRequester = remember { FocusRequester() }
     var isFocused by remember { mutableStateOf(false) }
 
     BasicTextField(
@@ -91,6 +87,7 @@ private fun UserNameTextField() {
         onValueChange = {
             basicText = it
         },
+        singleLine = true,
         cursorBrush = SolidColor(MaterialTheme.colorScheme.primary),
         modifier = Modifier
             .fillMaxWidth()
@@ -98,7 +95,6 @@ private fun UserNameTextField() {
             .height(62.dp)
             .clip(RoundedCornerShape(12.dp))
             .background(MaterialTheme.colorScheme.onBackground.copy(0.08f))
-            .focusRequester(focusRequester)
             .onFocusChanged {
                 isFocused = it.isFocused
             },
@@ -111,8 +107,7 @@ private fun UserNameTextField() {
         decorationBox = { innerTextField ->
             Box(
                 modifier = Modifier
-                    .fillMaxSize()
-                    .clickable { focusRequester.requestFocus() },
+                    .fillMaxSize(),
                 contentAlignment = Alignment.Center
             ) {
                 if (basicText.isEmpty() && !isFocused) {

@@ -1,4 +1,4 @@
-package com.viniciuscoscia.spendless.core.presentation.registration.createpin
+package com.viniciuscoscia.spendless.registration.createpin
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
