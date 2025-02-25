@@ -1,4 +1,4 @@
-package com.viniciuscoscia.spendless.core.data
+package com.viniciuscoscia.spendless.core.data.remote
 
 import com.viniciuscoscia.spendless.core.domain.DataError
 import com.viniciuscoscia.spendless.core.domain.Result

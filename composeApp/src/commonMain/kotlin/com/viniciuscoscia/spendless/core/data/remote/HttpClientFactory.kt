@@ -1,4 +1,4 @@
-package com.plcoding.bookpedia.core.data
+package com.viniciuscoscia.spendless.core.data.remote
 
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.HttpClientEngine

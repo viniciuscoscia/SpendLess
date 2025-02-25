@@ -1,4 +1,4 @@
-package com.viniciuscoscia.spendless.registration.preferences
+package com.viniciuscoscia.spendless.features.auth.presentation.registration.preferences
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

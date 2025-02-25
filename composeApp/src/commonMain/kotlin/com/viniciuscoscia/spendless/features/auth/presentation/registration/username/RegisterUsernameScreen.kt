@@ -1,4 +1,4 @@
-package com.viniciuscoscia.spendless.registration.create_username
+package com.viniciuscoscia.spendless.features.auth.presentation.registration.username
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

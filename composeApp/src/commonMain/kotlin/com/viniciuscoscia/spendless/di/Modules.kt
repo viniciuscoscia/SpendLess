@@ -1,6 +1,6 @@
 package com.viniciuscoscia.spendless.di
 
-import com.plcoding.bookpedia.core.data.HttpClientFactory
+import com.viniciuscoscia.spendless.core.data.remote.HttpClientFactory
 import org.koin.core.module.Module
 import org.koin.dsl.module
 
