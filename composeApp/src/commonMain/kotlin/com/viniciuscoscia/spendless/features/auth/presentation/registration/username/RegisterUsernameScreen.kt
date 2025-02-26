@@ -44,7 +44,7 @@ import spendless.composeapp.generated.resources.welcome_screen_subtitle
 import spendless.composeapp.generated.resources.welcome_screen_title
 
 @Composable
-fun CreateUsernameScreen() {
+fun RegisterUsernameScreen() {
     Scaffold(
         modifier = Modifier.fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
